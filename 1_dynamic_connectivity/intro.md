@@ -33,3 +33,36 @@ To specify the problem we develop an API that encapsulates the basic operations 
 * Identify a component containing a site (component = equivalence class).
 * Determine if two sites share the same component.
 * Count the number of components.
+
+The API will be as follows:
+```
+class UF
+    UF(int N)
+    void union(int p, int q)
+    boolean connected(int p, int q)
+    int count()
+```
+
+* `union()` merges two components (connects two sites)
+* `find()` returns integer component identifier for a given site (?).
+* `count()` returns number of components, `count()` starts as N when component is initialized (??), and decreases by one each time `union()` succesfully connects two sites.
+
+**KEY IDEA:** the development of an algorithmic solution to our problem is reduced to developing an implementaion of the API. Every implementation has to:
+* Define a data structure to represent known connections.
+* Develop efficient method implementations based on that data structure.
+
+The nature of the data structure has a direct impact on the effiency of the algorithms. Data structure and algorithm design go hand in hand.   
+
+### Explanations
+(?) `site 1` can be found in `component 1` or `component 2`. The *integer component identifier* of `component 1` is `1`. If `site 1` is in `component 1`, then `find(1) = 1`, if `site 1` is in `component 2` then `find(1) = 2`.
+(??) We start with N components becasuse when we initialize `UF(N)`, we have `N` unconnected sites, each site is it's own component.
+
+## Overall `UF` remarks
+
+The specification of the API specifies that sites and connections will be represented by `int` values between `0` and `N-1`, so it makes sense to use a *site-indexed array* `id[]` as our basic data structure to represent components. 
+
+This means that for the component for `site i` will be given by `id[i]`. In the begining, when no connections are made `id[i] = i`, as every site is it's own component. When joining sites `p` and `q` then `id[p] = id[q]`, because `id[p]` is the component of `p`, and `id[q]` is the component of `q`, when `p -> q` the component(*equivalence class*) is the same, hence `id[p] = id[q]`.
+
+Given the explanation above, it follows that `find(i)` will return `id[i]`. The implemenation of `connected(p, q)` will be a one-liner: `return find(p) == find(q)`.
+
+In summary, our starting point is Algorithm UF (next section). "We maintain two instance variables, the count of components and the array `id[]`. Implementations of `find()` and `union()` are the topic of the lesson.
