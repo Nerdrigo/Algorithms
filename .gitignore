@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#Files
+1_dynamic_connectivity/tinyUF.txt
+1_dynamic_connectivity/mediumUF.txt
+1_dynamic_connectivity/largeUF.txt
+.DS_Store
