@@ -66,4 +66,13 @@ This means that for the component for `site i` will be given by `id[i]`. In the 
 
 Given the explanation above, it follows that `find(i)` will return `id[i]`. The implemenation of `connected(p, q)` will be a one-liner: `return find(p) == find(q)`.
 
-In summary, our starting point is Algorithm UF (next section). The algorithm maintains two instance variables, the count of components and the array `id[]`. Implementations of `find()` and `union()` are the topic of the lesson.
+In summary, our starting point is [Algorithm UF](https://github.com/Nerdrigo/algorithms/blob/master/1_dynamic_connectivity/basic_UF.py) (next section). The algorithm maintains two instance variables, the count of components and the array `id[]`. Implementations of `find()` and `union()` are the topic of the lesson.
+
+The API is tested with the files that come in the [book's website](https://algs4.cs.princeton.edu/15uf/).
+
+To analyze the efficiency of the algorithms, we focus the number of times each article access an array entry (for read or write). This is due to the fact that the running time of the algorithm on a particular machine is proportional to this quantity. If one algorithm access an array entry one time for each pair, versus another one that does it 10 times for each pair, it is obvious that the first algorithm is faster.
+
+We shall consider three different implementations, all based on using the site-indexed id[] array, to determine whether two sites are in the same con- nected component.
+* Quick find
+* Quick union
+* Weighted quick union
