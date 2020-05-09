@@ -1,3 +1,5 @@
+import sys
+
 class UF:
     def __init__(self, N):
         '''
@@ -35,19 +37,32 @@ class UF:
         #some code
 
 if __name__ == '__main__':
+    '''
+    input is a txt file
+    first line has number of sites
+    following lines pairs of num to be connnected
+    ex:
+    3
+    1 2
+    3 1
+    For simplicity: assume input is always correct
+    '''
     
-    #reading input file
-    file = 'tinyUF.txt'
-    f = open(file, "r")
+    #Making sure input exist
+    if sys.argv[1]:
 
-    #going through lines
-    for line in f:
-        #spliting values
-        values = line.split(" ")
+        file = sys.argv[1]
+        f = open(file, "r")
 
-        #if reading first line instantiate
-        if len(values) ==1:        
-            uf = UF(int(values[0]))
+        #reading first line
+        num_site = next(f)
 
-        else:
+        #going through lines
+        for line in f:
+            #spliting values
+            values = line.split(" ")
+            #printing values
             print(str(int(values[0])) + "   " + str(int(values[-1])))
+
+    else:
+        print("Input file is needed")
