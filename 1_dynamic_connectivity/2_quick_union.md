@@ -11,7 +11,7 @@ We also observe that `fin(4) = 8`, and `find(1) = 1`.
 
 To implement `uninon(p,q)` we need to find the roots associated with `p` and `q`, then rename one of the components by linking one of these roots to the other. The choice is arbitrary.
 
-The implementation can be found [here]().
+The implementation can be found [here](https://github.com/Nerdrigo/algorithms/blob/master/1_dynamic_connectivity/2_quick_union.py).
 
 ## Forest of trees representation.
 
