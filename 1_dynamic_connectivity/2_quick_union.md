@@ -25,7 +25,7 @@ Analyzing the cost of quick-union is a little bit more complicated than quick-fi
 
 In the best case `find()` just needs one array access to find the component of a site; in the worst case it needs `2N-1`(?) on account on its compare and assign operations. As illustrated below, the illustration assumes a component of 5 sites (labeled 0-4), where 4 is the root, and the sites are connected as follow: `0 -> 1 -> 2 ->3 ->4`.
 
-//image here.
+<img src="https://github.com/Nerdrigo/algorithms/blob/master/1_dynamic_connectivity/images/2_quick_union_analysis.jpg" width="600" height="600">
 
 It is not difficult to construct a worst-case scenario for which the running time is quadratic. This follows from the proposition:
 
