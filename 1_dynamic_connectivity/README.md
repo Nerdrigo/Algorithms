@@ -75,4 +75,4 @@ To analyze the efficiency of the algorithms, we focus the number of times each a
 We shall consider three different implementations, all based on using the site-indexed id[] array, to determine whether two sites are in the same con- nected component.
 * [Quick find](https://github.com/Nerdrigo/algorithms/blob/master/1_dynamic_connectivity/quick_find.md)
 * [Quick union](https://github.com/Nerdrigo/algorithms/blob/master/1_dynamic_connectivity/2_quick_union.md)
-* Weighted quick union
+* [Weighted quick union](https://github.com/Nerdrigo/algorithms/blob/master/1_dynamic_connectivity/3_weighed_quick_union.md)

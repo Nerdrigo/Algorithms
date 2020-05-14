@@ -33,6 +33,8 @@ It is not difficult to construct a worst-case scenario for which the running tim
 >
 >**Proof** Immediate form the code.
 
+>**Definition** The size of a tree is its number of nodes. The *depth* of a node ina tree is the number of links on the path from it to the root. The *height* of a tre i shte maximum depth among its nodes.
+
 Supposing that we use quick-union for a problem that ends up with a single component, it means that we have to make at least `N-1` calls to `union()`.
 
 If we input the pairs in order (`0 -> 1, 0 -> 2, 0 -> ...`); after `N-1` pairings This means, we will end up with a tree of height `N-1` with `0 -> 1 -> 2 -> ...`. By the proposition above, the array accesses for the `union()` operation for the pair `0 i` is `2i+1` (one linear `find()` operation plus one constant `find()` operation plus the union). Thus the total number of array accesses of the `find()` operations for these `N` pairs is `2(1+2+...+N) ~ <sup>2</sup>`.
