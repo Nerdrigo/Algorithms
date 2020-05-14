@@ -76,3 +76,22 @@ We shall consider three different implementations, all based on using the site-i
 * [Quick find](https://github.com/Nerdrigo/algorithms/blob/master/1_dynamic_connectivity/quick_find.md)
 * [Quick union](https://github.com/Nerdrigo/algorithms/blob/master/1_dynamic_connectivity/2_quick_union.md)
 * [Weighted quick union](https://github.com/Nerdrigo/algorithms/blob/master/1_dynamic_connectivity/3_weighed_quick_union.md)
+
+## Optimal Algorithms
+
+In order to near constant time operation performance a method known as path compression can be used. Ideally, we would want to link every node directly to it's root, but we don't want to pay the price of moving a large number of links (like quick find). We can approach the ideal simply by making all nodes we *examine* link to the root. To implement path compression, we just add another loop to `find()` that sets the `id[]` entry corresponding to each node encountered along the way to link directl to the root. The net result is an almost flat tree. The method is simple an effective, but its effect is not discernible from weighted quick union in practical situations. *Weighted quick union with path compression is optimal but not quite constant-time per operation*. No program can guarantee constant time per operation. Weighted quick-union with path compression is very close to the best that we can do for this problem.
+
+## Perspective
+
+Each of the UF implementations we considered is an improvement over the prvious in some intuitive sense, but the process was smooth because we have the benefit of hindsight. 
+
+The implrementations are simple and the problem is well specified, so we can evaluate our algorithms directly by running empirical studies. We can also use these studies to validate mathematical results that quantify the performance of these algorithms.
+
+When possible, we follow the basic steps for fundamental problems:
+* Decide on a complete and specific problem statement, including identifying fundamental abstract op that are intrinsic to the problem and an API.
+* Carefully develop a succinct implementation for a straightforward algorithm, using well thought out development client and realistic input data.
+* Know when an implementation could not possibly be used to sovle problems on the scale contemplated and must be improved or abandoned.
+* Develop improved implementations through the process of stepwise refinement, validating the efficacy of ideas for improvement through empirical analysis, matehmatical analysis, or both.
+* Find high-level abstract representation of data structures or algorithms in operation that enable effective high-level design of improved versions.
+* Strive for worst-case performance guarantees when possible, but accept good performance on typical data when available.
+* Know when to leave further implementations for detailed in-depth study to skilled researchers and move on to the next problem.
