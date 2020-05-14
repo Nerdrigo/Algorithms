@@ -25,6 +25,6 @@ The implications of the proposition and it's corollary is that weighted quick un
 
 (?) Looking at the figure below, which is an example of a worst case scneario, we can see that when the tree is of size 8 (2<sup>3</sup>), it's height is 3. To prove the property we can use induction.
 
-//image here
+<img src="https://github.com/Nerdrigo/algorithms/blob/master/1_dynamic_connectivity/images/3_weighted_worst_case.png">
 
 The figure is a wost case scenario, as it is imposible (by the way the algorith works) to create a one sided long chain. If you want to create long chains, you have to create them the way the figure illustrates.
