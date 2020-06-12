@@ -134,3 +134,10 @@ dmypy.json
 1_dynamic_connectivity/largeUF.txt
 .DS_Store
 
+2_analysis_algorithms/16Kints.txt
+2_analysis_algorithms/1Kints.txt
+2_analysis_algorithms/1Mints.txt
+2_analysis_algorithms/2Kints.txt
+2_analysis_algorithms/32Kints.txt
+2_analysis_algorithms/4Kints.txt
+2_analysis_algorithms/8Kints.txt
