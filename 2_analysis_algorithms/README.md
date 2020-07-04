@@ -45,6 +45,8 @@ It is typcial that the terms after the leading term are relatively small when `N
 
 >**Definition** We write \~f(N) to represent eny function that, when divided by f(N), approaches 1 as N grows, and we write g(N) \~ f(N) to indicate that >g(N)/f(N) approaches 1 as N grows.
 
+**Examples**
+
 |                 function                | tilde approximation | order of growth |
 |:---------------------------------------:|:-------------------:|-----------------|
 | N<sup>3</sup>/6 - N<sup>2</sup>/2 + N/3 |  \~N<sup>3</sup>/6  |  N<sup>3</sup>  |
@@ -52,4 +54,14 @@ It is typcial that the terms after the leading term are relatively small when `N
 |                 lg(N) +1                |       \~log(N)      |      log(N)     |
 |                    3                    |         \~3         |        1        |
 
+**Commonly encountered order of growth functions**
 
+|  description |     function     |
+|:------------:|:----------------:|
+|   constant   |         1        |
+|  logarithmic |      log(N)      |
+|    linear    |         N        |
+| linearithmic |     N log(N)     |
+|   quadratic  |   N<sup>2</sup>  |
+|     cubic    | N <sup> 3 </sup> |
+|  exponential | 2 <sup> N </sup> |
