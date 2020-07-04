@@ -42,7 +42,14 @@ N(N-1)(N-1)/6 = N<sup>3</sup>/6 - N<sup>2</sup>/2 + N/3
 
 It is typcial that the terms after the leading term are relatively small when `N` is large, which are the cases we are interested in. To allow us to ignore insignificant terms and therefore substantially simplify the mathematical formulas, we often use the *tilde-notation* (\~), where we allow low-order terms that complicate formulas to represent a negligeble contribution to values of interest.
 
-```
-**Definition** We write \~f(N) to represent eny function that, when divided by f(N), approaches 1 as N grows, and we write g(N) \~ f(N) to indicate that g(N)/f(N) approaches 1 as N grows.
-```
+
+>**Definition** We write \~f(N) to represent eny function that, when divided by f(N), approaches 1 as N grows, and we write g(N) \~ f(N) to indicate that >g(N)/f(N) approaches 1 as N grows.
+
+|                 function                | tilde approximation | order of growth |
+|:---------------------------------------:|:-------------------:|-----------------|
+| N<sup>3</sup>/6 - N<sup>2</sup>/2 + N/3 |  \~N<sup>3</sup>/6  |  N<sup>3</sup>  |
+|          N<sup>2</sup>/2 + N/2          | \~N<sup>2</sup>/2   |  N<sup>2</sup>  |
+|                 lg(N) +1                |       \~log(N)      |      log(N)     |
+|                    3                    |         \~3         |        1        |
+
 
