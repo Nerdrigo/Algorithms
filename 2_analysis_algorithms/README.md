@@ -37,7 +37,7 @@ The primary challenge is to determine the frequency of execution of the statemen
 
 Frequency analysis can lead to complicated mathematical expressions, like:
 ```
-N(N-1)(N-1)/6 = N<sup>3</sup>/6 - N<sup>2</sup>/2 + N/3
+N(N-1)(N-1)/6 = N^3/6 - N^2/2 + N/3
 ```
 
 It is typcial that the terms after the leading term are relatively small when `N` is large, which are the cases we are interested in. To allow us to ignore insignificant terms and therefore substantially simplify the mathematical formulas, we often use the *tilde-notation* (\~), where we allow low-order terms that complicate formulas to represent a negligeble contribution to values of interest.
@@ -106,21 +106,21 @@ Stratergy for addressing new problems:
 ### Doubling ratio experiments
 
 * Develop an input generator that produces inputs that model the inputs expected in practice.
-* Run the [`DoublingRatio`](www.github.com) program, that calculates the ratio of each running time with the prvious.
-* Run until the ratios approach a limit `2<sup>b</sup?`.
+* Run the [`DoublingRatio`](https://github.com/Nerdrigo/algorithms/blob/master/2_analysis_algorithms/doubling_ration.py) program, that calculates the ratio of each running time with the prvious.
+* Run until the ratios approach a limit 2<sup>b</sup>.
 
 The tests is not effective if the ratios don't approach a limiting value, but they do for many programs implying the following conclusions:
-* The *order of growth* of the running time is approximately `N<sup>b</sup?`.
-* To predict running times, multiply the last observed running tyme by `2<sup>b</sup?` and double `N`, continuing as long as desired. If you want to predict for an input size that is not a power of 2 times `N`, you can adjust ratios accordingly.
+* The *order of growth* of the running time is approximately N<sup>b</sup>.
+* To predict running times, multiply the last observed running tyme by 2<sup>b</sup> and double `N`, continuing as long as desired. If you want to predict for an input size that is not a power of 2 times `N`, you can adjust ratios accordingly.
 
 Why does the ratio approach a constatn? A simple mathematical calculation shows that to be tha case
 
->**Proposition** If `T(N) \~ aN<sup>b</sup>lg(N)` then `T(2N)/T(N) \~ 2<sup>b</sup>`.
+>**Proposition** If `T(N) ~ aN^b*lg(N)` then `T(2N)/T(N) ~ 2^b`.
 >**Proof** Immediate form calculation
 ```
-> T(2N)/T(N) = a(2N)<sup>b</sup>lg(2N) / aN<sup>b</sup>lg(N)
->            = 2<sup>b</sup> (1 + lg(2) + lg(N))
->            \~ 2<sup>b</sup>
+> T(2N)/T(N) = a(2N)^b*lg(2N) / aN^b*lg(N)
+>            = 2^b (1 + lg(2) + lg(N))
+>            ~ 2^b
 ```
 
 **YOU SHOULD ALWAYS RUN DOUBLING RATION EXPERIMENTS FOR EVERY PROGRAM THAT YOU WRITE WERE PERFORMANCE MATTERS** doing tos is a very simple way to estimate order of growth of the running time, perhaps revealing a performance bug where a program may turn out to be not as efficient as you might think.
