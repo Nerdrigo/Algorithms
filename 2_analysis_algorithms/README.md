@@ -65,3 +65,66 @@ It is typcial that the terms after the leading term are relatively small when `N
 |   quadratic  |   N<sup>2</sup>  |
 |     cubic    | N <sup> 3 </sup> |
 |  exponential | 2 <sup> N </sup> |
+
+
+#### Analysis of algorithms
+
+Working with the order of growth allows us to separate a program from the algorithm it implements. The algorithm that you are using determines the order of growth. Separating the algorithm from the implementation is a powerful concept, allowing us to develop knowledge about the performance of the algorithm and then apply on any computer.
+
+#### Cost model
+
+>**Definition** *property* refers to a hypothesis that needs to be validated through experimentation.
+
+>**Definition** *proposition* referes to mathematical trugh about algorithms in terms of cost model.
+
+We focus attention on properties of algorithms by articulating a *cost model* that defines the basic operations used by the algorithms. With the appropiate cost model (such as number of array accesses, as in the dynamic connnectivity problem), we can make precise mathematical statements about properties fo an algorithm.
+
+Our intent is to articulate cost models such that the order of growth of the running time for a given implementation is the same as the order of growth  of the cost of the underlying algorithm (in other words, the cost model should include operations that fall within the inner loop).
+
+#### Summary
+
+For many programs, developing a mathematical model of running time reduces to the following steps:
+
+* Develop an *input model*, including a definition of the problem size.
+* Identify the *inner loop*
+* Define a *cost model* that includes operations in the inner loop.
+* Determine the frequency of execution og those operations for the given input. Doing so migh require mathematical analysis.
+
+### Designing faster algorithms
+
+One of the primary reasons to study the order of growth of a program is to help design a faster algorithm to solve the same problem.
+
+Some routes to consider:
+* Reduce problem complexity (3sum to 2sum), and improve simpler version
+* Translate new version to original problem.
+
+Stratergy for addressing new problems:
+* Implement and analyze a straighforward solution to the problem. Such solutions are referred as *brute-force* solutions.
+* Examine algorithmic improvements, usually designed to reduce the order of growth of the running time.
+* Run experiments to validate the hypotheses that the new algorithms are faster.
+
+### Doubling ratio experiments
+
+* Develop an input generator that produces inputs that model the inputs expected in practice.
+* Run the [`DoublingRatio`](www.github.com) program, that calculates the ratio of each running time with the prvious.
+* Run until the ratios approach a limit `2<sup>b</sup?`.
+
+The tests is not effective if the ratios don't approach a limiting value, but they do for many programs implying the following conclusions:
+* The *order of growth* of the running time is approximately `N<sup>b</sup?`.
+* To predict running times, multiply the last observed running tyme by `2<sup>b</sup?` and double `N`, continuing as long as desired. If you want to predict for an input size that is not a power of 2 times `N`, you can adjust ratios accordingly.
+
+Why does the ratio approach a constatn? A simple mathematical calculation shows that to be tha case
+
+>**Proposition** If `T(N) \~ aN<sup>b</sup>lg(N)` then `T(2N)/T(N) \~ 2<sup>b</sup>`.
+>**Proof** Immediate form calculation
+```
+> T(2N)/T(N) = a(2N)<sup>b</sup>lg(2N) / aN<sup>b</sup>lg(N)
+>            = 2<sup>b</sup> (1 + lg(2) + lg(N))
+>            \~ 2<sup>b</sup>
+```
+
+**YOU SHOULD ALWAYS RUN DOUBLING RATION EXPERIMENTS FOR EVERY PROGRAM THAT YOU WRITE WERE PERFORMANCE MATTERS** doing tos is a very simple way to estimate order of growth of the running time, perhaps revealing a performance bug where a program may turn out to be not as efficient as you might think.
+
+### Estimating the feasibility of solving large problems.
+
+
