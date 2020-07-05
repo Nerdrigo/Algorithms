@@ -146,4 +146,18 @@ Some assumtions that might lead to inconsisten results:
 
 ## Memory
 
+*Values presented in here are for example purposes and should not be used in interviews, or to actually calculate anything*
+
+When calculating memory for data types take into account:
+* Overhead (reference to oject's class, garbage collection, sync info)
+* Padding
+* Objects actual value
+* Reference to an object
+
+For example an `int` could cost 24 bytes: 16 of overhead, 4 bytes for int instance variable, and 4 for padding).
+
+An example that uses reference to an object we can think of a node that stores integers. The node would use 16 bytes of overhead, 8 bytes to reference the node value, 8 bytes to reference the `next(node)` value, and 8 bytes for extra overhead [padding?]); finally we add 24 bytes for the integer, bringin the total to 64 bytes.
+
+Overhead values may vary from primitive object to primite object.
+
 
