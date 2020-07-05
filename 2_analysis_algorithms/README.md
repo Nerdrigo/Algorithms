@@ -23,7 +23,7 @@ To reliably measure the amount of time of a given program I use the python funct
 
 One can then proceed to plot the input size `N` on the *x-axis*, and the time it takes `T(N)` in the *y-axis*. You can use a regular plot, or a log-log plot.
 
-### Mathematical models
+## Mathematical models
 
 It is possible, in principle, to estimate the running time of any program. The total running time of a program is determined by two primary factors:
 * The cost of executing each statement
@@ -33,7 +33,7 @@ The first one is a property of  the computer, the compiler/interpreter and the o
 
 The primary challenge is to determine the frequency of execution of the statements. Usually higher-level reasoning is required for this (as was done for the dynamic connectivity problem). Sometimes the frequency depends on the input data, for example, the number of times `ThreeSum().count` is precisely the number of triplets in the input, which can range from 0 to all of them. In this case, is is possible to do a probabilisti analysis to determine expected value of this quantity.
 
-#### Tilde approximations
+### Tilde approximations
 
 Frequency analysis can lead to complicated mathematical expressions, like:
 ```
@@ -67,11 +67,11 @@ It is typcial that the terms after the leading term are relatively small when `N
 |  exponential | 2 <sup> N </sup> |
 
 
-#### Analysis of algorithms
+### Analysis of algorithms
 
 Working with the order of growth allows us to separate a program from the algorithm it implements. The algorithm that you are using determines the order of growth. Separating the algorithm from the implementation is a powerful concept, allowing us to develop knowledge about the performance of the algorithm and then apply on any computer.
 
-#### Cost model
+### Cost model
 
 >**Definition** *property* refers to a hypothesis that needs to be validated through experimentation.
 
@@ -81,7 +81,7 @@ We focus attention on properties of algorithms by articulating a *cost model* th
 
 Our intent is to articulate cost models such that the order of growth of the running time for a given implementation is the same as the order of growth  of the cost of the underlying algorithm (in other words, the cost model should include operations that fall within the inner loop).
 
-#### Summary
+### Summary
 
 For many programs, developing a mathematical model of running time reduces to the following steps:
 
@@ -90,7 +90,7 @@ For many programs, developing a mathematical model of running time reduces to th
 * Define a *cost model* that includes operations in the inner loop.
 * Determine the frequency of execution og those operations for the given input. Doing so migh require mathematical analysis.
 
-### Designing faster algorithms
+## Designing faster algorithms
 
 One of the primary reasons to study the order of growth of a program is to help design a faster algorithm to solve the same problem.
 
@@ -126,5 +126,24 @@ Why does the ratio approach a constatn? A simple mathematical calculation shows 
 **YOU SHOULD ALWAYS RUN DOUBLING RATION EXPERIMENTS FOR EVERY PROGRAM THAT YOU WRITE WERE PERFORMANCE MATTERS** doing tos is a very simple way to estimate order of growth of the running time, perhaps revealing a performance bug where a program may turn out to be not as efficient as you might think.
 
 ### Estimating the feasibility of solving large problems.
+
+You need to be able to answer the basic question for every program you write: *Will the program be able to process this given input in  a reasonable amount of time?* 
+
+Knowing the order of growth of the running time of an algorithm provides precisely the information to understand limitaions on the size of the problems that you can solve. *Developing such understanding is the most important reason to study performance*.
+
+## Caveats 
+
+There are many reasons that you might get inconsistent or misleading re- sults when trying to analyze program performance in detail. All of them have to do with the idea that one or more of the basic assumptions underlying our hypotheses might be not quite correct. We can develop new hypotheses based on new assumptions, but the more details that we need to take into account, the more care is required in the analysis.
+
+Some assumtions that might lead to inconsisten results:
+
+* Large constants in lower-order terms
+* Nondominang inner loop
+* Instruction time
+* System considerations
+* Strong dependence on inputs
+* Multiple problem parameters
+
+## Memory
 
 
