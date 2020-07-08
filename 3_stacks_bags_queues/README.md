@@ -11,7 +11,7 @@ Each contains a no-argument constructor, a method to add an item to the collecti
 >In the book, the APIs implement the *Iterable* class(?), seems to be either not needed in python, or it needs the use of *sequence*. Will update in future.
 
 The implementations are found:
-* [Bag]()
-* [Queue]()
-* [Stack]()
+* [Bag](https://github.com/Nerdrigo/algorithms/blob/master/3_stacks_bags_queues/1_bag.py)
+* [Queue](https://github.com/Nerdrigo/algorithms/blob/master/3_stacks_bags_queues/2_queue.py)
+* [Stack](https://github.com/Nerdrigo/algorithms/blob/master/3_stacks_bags_queues/3_stack.py)
 
