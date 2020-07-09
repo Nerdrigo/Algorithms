@@ -66,9 +66,33 @@ When tracing code that uses linked lists and other linked structures it is usefu
 * We put the values instance variables within each rectangle
 * We use arrows that point to the refeenced objects to depict references.
 
+### Inserting from the beggining
 
+To insert a new node to a linked list at the beginning is very simple. For example, to insert the string `a` at the beginning of a linked list with first node `first`, we assign `old_first = first` and assign first to a new node with `item = "a"` and `next = old_first`.
 
+### Remove from the beginning
 
+To remove from the beginning, the only thing you have to do is re-assing first like `first = first.next`.
 
+### Insert at the end
 
+The method to insert a node at the end is similar to add a node at the beginning, you need to keep reference of your last node (`last`) and create a `old_last` copy. However, complications arise for the node at the end because every method that modifies the list needs code to check whether that variable needs to be modified. 
 
+The code in the previous section would not work, since removing the first node in the list might in- volve changing the reference to the last node in the list, since when there is only one node in the list, it is both the first one and the last one.
+
+### Insert/remove at other positions
+
+In order to accomplish this it is necessary to traverse the entire list. Such a solution is undesirable because it takes time proportional to the length of the list. The standard solution to enable arbitrary insertions and deletions is to use a doubly-linked list, where each node has two links, one in each direction. 
+
+### Traversal
+
+To traverse the linked list we can use the following code
+```
+x = first
+
+while x != None:
+    
+    #Process x.item
+    
+    x = x.next
+```
