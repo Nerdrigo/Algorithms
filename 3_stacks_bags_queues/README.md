@@ -96,3 +96,8 @@ while x != None:
     
     x = x.next
 ```
+### Implementation
+
+The implementation of stack and queue is immediate from the preceding section.
+
+The implementation of bag is really the implementation of a stack with different references, the code for bag implements the iteration function which allows the user to access each item in the bag.

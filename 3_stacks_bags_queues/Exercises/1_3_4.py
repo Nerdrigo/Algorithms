@@ -70,20 +70,28 @@ class Stack:
 
         return self.size
 
-if __name__ == '__main__':
-
-    collection = sys.argv[1:]
-
-    print(collection)
+def check(text):
 
     stack = Stack()
-    output = []
+    correspoing = {")":"(", "]":"[", "}":"{"}
     
-    for item in collection:
-        if item != "-":
-            stack.push(item)
-        else:
-            output.append(stack.pop())
+    for char in text:
+        if char in "{[(":
+            stack.push(char)
+        elif char in ")]}":
+            o_brack = stack.pop()
+            c_brack = correspoing[char]
 
-    print(output)
+            if o_brack != c_brack:
+                return False  
+
+    return True     
+
+
+if __name__ == '__main__':
+
+    text = "[(])"
+
+    print(check(text))
+
     
